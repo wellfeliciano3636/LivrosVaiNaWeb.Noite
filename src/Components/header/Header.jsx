@@ -1,17 +1,15 @@
-import lupa from '../../../assets/lupa.png'
-import logoLivro from '../../../assets/logolivro.png'
-import Inicio from '../../../pages/Inicio/Inicio'
-import LivrosDoados from '../../../pages/LivrosDoados/LivrosDoados'
-import QueroDoar from '../../../pages/QueroDoar/QueroDoar'
-
+import lupa from '../../assets/lupa.png'
+import logoLivro from '../../assets/logolivro.png'
+import Inicio from '../../pages/Inicio/Inicio'
+import LivrosDoados from '../../pages/LivrosDoados/LivrosDoados'
+import QueroDoar from '../../pages/QueroDoar/QueroDoar'
 import {BrowserRouter, Routes, Route, Link} from 'react-router-dom'
-
 import s from './header.module.scss'
 
 export default function Header(){
     return(
         <BrowserRouter>
-            <header className={s.header}>
+            <header >
                 <section className={s.logoHeader}>
                     <img src={logoLivro} alt='Imagem de ilustraçao'></img>
                     <h1>Livro vai na web</h1>
@@ -25,7 +23,9 @@ export default function Header(){
                 </nav>
                 <section className={s.barraDeBusca}>
                     <input type="search" name="" id="" placeholder='o que vc procura' />
-                    <button><img src={lupa} alt='imagem de lupa branca'></img></button>
+                    <button>
+                        <img src={lupa} alt='Imagem de lupa branca'/>
+                    </button>
                 </section>
             </header>
             <Routes>
@@ -33,7 +33,7 @@ export default function Header(){
                 <Route path='/livros-doados' element={<LivrosDoados/>}/>
                 <Route path='/quero-doar' element={<QueroDoar/>}/>
             </Routes>
-
         </BrowserRouter>
+
     )
 }
